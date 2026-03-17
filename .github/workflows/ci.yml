@@ -3,21 +3,21 @@ name: Python CI Starter
 on:
   pull_request:
     branches: [main]
-jobs:
-  ci:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      -name: echo $uname
-        run: echo $uname -a
-
   push:
     branches: [main]
-  # TODO: add `pull_request` trigger targeting `main`
-
 jobs:
+  pullcheck:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: echo $uname
+      run: echo $uname -a
+
+
+
+  # TODO: add `pull_request` trigger targeting `main`
   ci:
     runs-on: ubuntu-latest
     steps:
